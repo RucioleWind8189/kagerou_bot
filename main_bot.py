@@ -21,7 +21,7 @@ async def on_ready():
 
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="団員情報に接続しています")
+    activity = discord.Game(name="団員情報に接続しています") #アクティビティ表示
     await bot.change_presence(status=discord.Status.online, activity=activity)
     print(f"準備完了！：{bot.user}")
 
