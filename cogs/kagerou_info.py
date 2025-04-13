@@ -20,8 +20,6 @@ class KagerouInfo(commands.Cog):
         # 入力された名前がデータにあるかチェック(aliases対応)
        for member_data in self.members.values():
         if name_lower in [alias.lower() for alias in member_data.get("aliases",[])]:
-            #正式名称取得(JSON内の"name")
-            official_name = member_data["name"]
             
             # カラーを文字列 "#xxxxxx" から int に変換
             color_hex = member_data.get("color", "#6e4aff")
