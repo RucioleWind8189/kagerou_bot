@@ -2,13 +2,17 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 import json
+import os
 
 # Cogの定義：Botの機能を分けて書ける
 class KagerouInfo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         # JSONファイルから団員データを読み込む
-        with open("data/members.json", encoding="utf-8") as f:
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        file_path = os.path.join(BASE_DIR, "data", "members.json")
+
+        with open(file_path, encoding="utf-8") as f:
             self.members = json.load(f)
 
     # /member
